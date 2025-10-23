@@ -1,10 +1,11 @@
+
 main {
     font-family: Arial, sans-serif;
     background: #fff;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     text-align: center;
-    height: 100%;
+    min-height: 100vh;
 }
 
 h1 {
@@ -12,6 +13,13 @@ h1 {
     font-size: 32px;
     color: #333;
     text-shadow: 1px 1px 2px #aaa;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 0 auto 30px;
+    max-width: 100%;
 }
 
 table {
@@ -19,6 +27,7 @@ table {
     border-collapse: collapse;
     width: 80%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 thead {
@@ -37,6 +46,10 @@ tbody td {
     border-bottom: 1px solid #ddd;
     text-align: center;
     font-size: 14px;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
 }
 
 /* Estados */
@@ -77,6 +90,19 @@ tbody td {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-editar:hover {
+    background: #e0b032;
+}
+
+.botones-contenedor {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .btn-regresar,
@@ -84,17 +110,181 @@ tbody td {
     border: none;
     padding: 12px 22px;
     border-radius: 20px;
-    margin: 20px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-regresar {
     background: #ddd;
 }
 
+.btn-regresar:hover {
+    background: #ccc;
+}
+
 .btn-nuevo {
     background: #6f42c1;
     color: white;
 }
+
+.btn-nuevo:hover {
+    background: #5a32a3;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px y menos) */
+/*@media screen and (max-width: 768px) {
+    main {
+        padding: 15px;
+        background-color: #6f42c1;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    table {
+        width: 95%;
+        font-size: 13px;
+    }
+
+    thead th {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+
+    tbody td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    .btn-editar {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .btn-regresar,
+    .btn-nuevo {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}*/
+
+/* Móviles (640px y menos) */
+@media screen and (max-width: 1000px) {
+    main {
+        padding: 10px;
+        
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    /* Ocultar encabezados de tabla */
+    table {
+        width: 100%;
+        margin: 20px auto;
+        box-shadow: none;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    /* Convertir filas en cards */
+    table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+
+    table tbody td {
+        display: block;
+        text-align: right;
+        padding: 12px 15px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        font-size: 14px;
+    }
+
+    table tbody td:last-child {
+        border-bottom: 0;
+    }
+
+    /* Mostrar etiquetas antes de cada dato */
+    table tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #6f42c1;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    /* Centrar el botón editar */
+    table tbody td[data-label="Editar información"] {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    table tbody td[data-label="Editar información"]::before {
+        display: none;
+    }
+
+    .btn-editar {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Botones principales en columna */
+    .botones-contenedor {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .btn-regresar,
+    .btn-nuevo {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    /* Ajustar badges de estado y rol */
+    .activo,
+    .inactivo {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .rol {
+        font-size: 12px;
+    }
+}
+
+/* Móviles pequeños (480px y menos) */
+/*@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    table tbody td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    table tbody td::before {
+        font-size: 11px;
+    }
+}*/
