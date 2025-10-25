@@ -57,18 +57,6 @@ tbody td {
     font-weight: bold;
     display: inline-block;
 }
-
-/* Roles */
-.rol {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.rol::before {
-    content: "👤";
-}
-
 /* Botones */
 .btn-editar {
     background: #f5c542;

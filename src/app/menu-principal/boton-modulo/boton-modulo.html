@@ -1,0 +1,17 @@
+@if (nombreModulo() != 'Dashboard') {
+<a [routerLink]="nombreModulo()">
+    <div
+        class="p-4 pr-4 pt-2 pb-2 flex gap-5 items-center hover:bg-indigo-950 rounded-xl cursor-pointer hover:scale-110 transition-transform">
+        <img [src]="src()" alt="{{nombreModulo()}}-icon" class="size-7" />
+        <p>{{nombreModulo()}}</p>
+    </div>
+</a>
+} @else {
+<a [routerLink]="'/Dashboard'">
+    <div
+        class="p-4 pr-4 pt-2 pb-2 flex gap-5 items-center hover:bg-indigo-950 rounded-xl cursor-pointer hover:scale-110 transition-transform">
+        <img [src]="src()" alt="{{nombreModulo()}}-icon" class="size-7" />
+        <p>{{nombreModulo()}}</p>
+    </div>
+</a>
+}
